@@ -12,23 +12,28 @@ export default function App() {
     let newPhoneName = prompt("phone name");
     let newPhonePrice = +prompt("phone Price");
     let newPhoneQty = +prompt("phone Quantity");
-    let newObj =
-    {
-      name: newPhoneName,
-      price: newPhonePrice,
-      qty: newPhoneQty
+    if (!newPhoneName || isNaN(newPhonePrice) || newPhonePrice <= 0 || isNaN(newPhoneQty) || newPhoneQty < 0) {
+      alert('You must a valid Data')
+    }
+    else {
+      let newObj =
+      {
+        name: newPhoneName,
+        price: newPhonePrice,
+        qty: newPhoneQty
 
-    };
-    let copy = [...phones]
-    copy.push(newObj)
-    setPhones(copy)
+      };
+      let copy = [...phones]
+      copy.push(newObj)
+      setPhones(copy)
+    }
   }
   const updatePhone = (index) => {
     let nameToEdit = prompt('Enter edited name');
     let priceToEdit = +prompt('Enter edited price');
     let qtyToEdit = prompt('Enter edited quantity');
     if (!nameToEdit || isNaN(priceToEdit) || priceToEdit <= 0 || isNaN(qtyToEdit) || qtyToEdit < 0) {
-      alert('You must a valid Data to update')
+      alert('You must a valid Data')
     }
     else {
 
