@@ -47,7 +47,8 @@ export default function App() {
     setPhones(copy);
   }
   return (
-    <>
+    <div className="p-5">
+
       <table className=" table">
         <thead>
           <td>#</td>
@@ -80,5 +81,8 @@ export default function App() {
         </tbody>
 
       </table >
-    </>)
+      <button className="mt-5 text-center btn btn-success " onClick={() => {
+        addNewPhone()
+      }}>Add New Phone</button>
+    </div>)
 }
